@@ -10,7 +10,7 @@ const useGetMessages = () => {
     const fetchMessages = useCallback(async () => {
         try {
             axios.defaults.withCredentials = true;
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/message/${selectedUser?._id}`);
+            const res = await axios.get(`http://localhost:5000/api/v1/message/${selectedUser?._id}`);
             dispatch(setMessages(res.data));
         } catch (error) {
             console.log(error);

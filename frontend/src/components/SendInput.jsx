@@ -3,7 +3,6 @@ import { Send } from 'lucide-react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMessages } from '../Redux/messageSlice';
-import { BASE_URL } from "../index";
 
 const SendInput = () => {
   const [message, setMessage] = useState('');
@@ -17,7 +16,7 @@ const SendInput = () => {
 
     try {
       const res = await axios.post(
-        `${BASE_URL}/api/v1/message/send/${selectedUser?._id}`,
+        `http://localhost:5000/api/v1/message/send/${selectedUser?._id}`,
         { message },
         {
           headers: {

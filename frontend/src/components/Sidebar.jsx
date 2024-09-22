@@ -5,7 +5,6 @@ import { Search, LogOut, Menu, X } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { setMessages } from '../Redux/messageSlice';
-import { BASE_URL } from '../index';
 import OtherUsers from './OtherUsers';
 import { setAuthUser, setOtherUsers, setSelectedUser } from '../Redux/userSlice';
 
@@ -18,7 +17,7 @@ const Sidebar = () => {
 
   const logoutHandler = async () => {
     try {
-      const res = await axios.get(`${BASE_URL}/api/v1/user/logout`);
+      const res = await axios.get(`http://localhost:5000/api/v1/user/logout`);
       navigate('/login');
       toast.success(res.data.message);
       dispatch(setAuthUser(null));
