@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     console.log(user);
     try {
-      const res = await axios.post(`http://localhost:5000/api/v1/user/login`, user, {
+      const res = await axios.post(`https://chat-app-dev-nnsc.onrender.com/api/v1/user/login`, user, {
         headers: {
           'Content-Type': 'application/json'
         },
